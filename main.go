@@ -4,15 +4,13 @@ import (
 	"fmt"
 )
 
-func countHandler() (vowel int, conso int) {
-	fmt.Println("Go String Vowel-Consonant Counter")
-	inputString := readLine("Input Word to Count: ")
+func countHandler(w string) (vowel int, conso int) {
 
-	fmt.Println(inputString)
+	fmt.Println("Input =", w)
 	vowel = 0
 	conso = 0
 
-	for _, value := range inputString {
+	for _, value := range w {
 		switch value {
 		case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U':
 			vowel++
@@ -20,12 +18,15 @@ func countHandler() (vowel int, conso int) {
 			conso++
 		}
 	}
-	fmt.Printf("Huruf mati: %d, Huruf hidup: %d ", conso, vowel)
+	fmt.Printf("Huruf mati: %d, Huruf hidup: %d \n \n", conso, vowel)
 	return
 }
 
 func main() {
-	countHandler()
+	fmt.Println("Go String Vowel-Consonant Counter")
+	inputString := readLine("Input Word to Count: ")
+
+	countHandler(inputString)
 
 }
 
