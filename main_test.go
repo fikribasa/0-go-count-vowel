@@ -9,9 +9,9 @@ var inputTest = []struct {
 	output1 int
 	output2 int
 }{
-	{"aaoms", 3, 2},
-	{"testingagain", 5, 7},
-	{"HelloWorld", 3, 7},
+	{"aaoms", 2, 2},
+	{"testingagain", 3, 4},
+	{"HelloWorld", 2, 5},
 }
 
 func TestCount(t *testing.T) {

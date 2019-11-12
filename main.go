@@ -5,12 +5,28 @@ import (
 )
 
 func countHandler(w string) (vowel int, conso int) {
-
-	fmt.Println("Input =", w)
 	vowel = 0
 	conso = 0
+	// var savedWord rune
+	var filteredString []rune
+	runes := []rune(w)
 
-	for _, value := range w {
+	for i := 0; i < len(runes); i++ {
+		// Scan slice for a previous element of the same value.
+		exists := false
+		for v := 0; v < i; v++ {
+			if runes[v] == runes[i] {
+				exists = true
+				break
+			}
+		}
+		// If no previous element exists, append this one.
+		if !exists {
+			filteredString = append(filteredString, runes[i])
+		}
+	}
+
+	for _, value := range filteredString {
 		switch value {
 		case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U':
 			vowel++
